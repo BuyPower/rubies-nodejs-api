@@ -80,6 +80,15 @@ class Rubies {
         console.log(accounts);
         return accounts;
     }
+
+    nameEnquiry = async (accountnumber, bankcode) => {
+        const user = await Api.post(this.base_url + '/nameenquiry',
+            { accountnumber, bankcode },
+            { 'Authorization': this.apiKey }
+        );
+        console.log(user);
+        return user;
+    }
     
 };
 
